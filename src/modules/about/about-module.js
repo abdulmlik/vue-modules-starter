@@ -7,7 +7,10 @@ export class AboutModule {
     this.name = "about";
   }
 
-  install(Vue) {
-    this.router.addRoutes(aboutRoutes);
+  install(/*Vue*/) {
+    // this.router.addRoutes(aboutRoutes);
+    for (let aboutRoute of aboutRoutes) {
+      this.router.addRoute(aboutRoute);
+    }
   }
 }

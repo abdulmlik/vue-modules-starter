@@ -8,8 +8,11 @@ export class HomeModule {
     this.name = "home";
   }
 
-  install(Vue) {
-    this.router.addRoutes(homeRoutes);
+  install(/*Vue*/) {
+    // this.router.addRoutes(homeRoutes);
+    for (let homeRoute of homeRoutes) {
+      this.router.addRoute(homeRoute);
+    }
     this.store.registerModule([this.name], homeStore);
   }
 }
